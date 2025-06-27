@@ -13,14 +13,6 @@ gemini_model_name = os.getenv("GEMINI_MODEL_NAME")
 gemini_client = AsyncOpenAI(api_key=gemini_api_key, base_url=gemini_base_url)
 gemini_model = OpenAIChatCompletionsModel(openai_client=gemini_client, model=str(gemini_model_name))
 
-openai_api_key = os.getenv("GEMINI_API_KEY")
-openai_base_url = os.getenv("GEMINI_BASE_PATH")
-openai_model_name = os.getenv("GEMINI_MODEL_NAME")
-
-
-# openai_client = AsyncOpenAI(api_key=openai_api_key, base_url=openai_base_url)
-# openai_model = OpenAIChatCompletionsModel(openai_client=openai_client, model=str(openai_model_name))
-
 math_agent: Agent = Agent(
     name="Math Agent",
     instructions="""
